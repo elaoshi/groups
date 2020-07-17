@@ -28,6 +28,11 @@ class Post extends Model
         return $this->morphMany(Report::class, 'reportable');
     }
 
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id','user_id');
+    }
+
     /**
      * Creates a post.
      *
